@@ -1,0 +1,14 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "Curriculum Vitae Responsivo",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Fernandez Nahuel",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.9.4"
+  }
+}
