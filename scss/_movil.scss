@@ -37,10 +37,18 @@
     transform: translate3d(100%, 0, 0);
 
     .logo {
-      background: url(/../img/portrait_small.jpg);
+      background: url(../img/witcher_150_150.jpg);
       width: 150px;
       height: 150px;
     }
+  }
+  .acerca-info {
+    grid-template-areas:
+      'acercaimagen'
+      'bio'
+      'trabajo1'
+      'trabajo2';
+    grid-template-columns: 1fr;
   }
 }
 

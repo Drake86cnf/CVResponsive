@@ -55,7 +55,7 @@
     .menu-izquierda .logo {
       width: 250px;
       height: 250px;
-      background: url(/../img/portrait.jpg);
+      background: url(../img/witcher_250_250.jpg);
       border-radius: 50%;
       border: solid 3px #eece1a; }
   .menu .nav-item {
@@ -93,37 +93,6 @@
 .nav-item:nth-child(5) {
   transition-delay: 0.5s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-opciones,
-  div.menu-izquierda {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-opciones.show,
-    div.menu-izquierda.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-opciones {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-izquierda {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-izquierda .logo {
-      background: url(/../img/portrait_small.jpg);
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#inicio h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
@@ -132,14 +101,14 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(/../img/background.jpg);
+    background: url(../img/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -178,7 +147,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main#inicio {
     overflow: hidden; }
     main#inicio h1 {
@@ -190,3 +159,66 @@ main {
       main .iconos a:hover {
         color: #eece1a;
         transition: all 0.5s ease-out; }
+
+.acerca-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'acercaimagen bio' 'trabajo1 trabajo2';
+  grid-template-columns: repeat(2, 1fr); }
+  .acerca-info .acerca-imagen {
+    grid-area: acercaimagen;
+    margin: auto;
+    border-radius: 50%;
+    border: #eece1a 3px solid; }
+  .acerca-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .acerca-info .trabajo-1 {
+    grid-area: trabajo1; }
+  .acerca-info .trabajo-2 {
+    grid-area: trabajo2; }
+  .acerca-info .trabajo {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #eece1a 5px solid; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-opciones,
+  div.menu-izquierda {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-opciones.show,
+    div.menu-izquierda.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-opciones {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-izquierda {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-izquierda .logo {
+      background: url(../img/witcher_150_150.jpg);
+      width: 150px;
+      height: 150px; }
+  .acerca-info {
+    grid-template-areas: 'acercaimagen' 'bio' 'trabajo1' 'trabajo2';
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#inicio h1 {
+    margin-top: 10vh; } }
