@@ -43,8 +43,8 @@ header {
   width: 100%;
 }
 
-.text-secundary {
-  color: $secundary-color;
+.text-secondary {
+  color: $secondary-color;
 }
 
 main {
@@ -63,7 +63,7 @@ main {
     a {
       padding: 0.4rem;
       &:hover {
-        color: $secundary-color;
+        color: $secondary-color;
         @include easeOut();
       }
     }
