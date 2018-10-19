@@ -1,0 +1,37 @@
+// Boton del Menu
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    @include easeOut;
+  }
+
+  //Transfromamos el icono del menu en una X
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      //La primera linea rota y se posiciona para formar / de la X
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      //La segunda linea desaparece
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      //La tercera linea rota y se posiciona para formar \ de la X
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
