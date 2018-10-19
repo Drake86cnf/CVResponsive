@@ -28,6 +28,14 @@ $background-opacity: 0.9;
   }
 }
 
+//cambia el color de la fuente
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
 //Mixin para tamaños de pantallas
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
