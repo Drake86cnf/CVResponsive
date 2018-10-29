@@ -1,9 +1,18 @@
 //Widescreens
 @include mediaXl {
+  .proyectos {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 //PC Escritorio y Notebooks
 @include mediaLg {
+  .proyectos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .experiencia-laboral {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 //Tablests y netbooks
@@ -37,7 +46,8 @@
     transform: translate3d(100%, 0, 0);
 
     .logo {
-      background: url(../img/witcher_150_150.jpg);
+      background: url(../img/foto.jpg);
+      background-size: 150px 150px;
       width: 150px;
       height: 150px;
     }
@@ -50,11 +60,62 @@
       'trabajo2';
     grid-template-columns: 1fr;
   }
+  .proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .experiencia-laboral {
+    grid-template-columns: 1fr;
+  }
 }
 
 //Celulares
 @include mediaSm {
   main#inicio h1 {
     margin-top: 10vh;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 300;
+
+    &.lg-heading {
+      font-size: 3rem;
+    }
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      background: rgba(lighten($primary-color, 2), 0.1);
+    }
+  }
+  div.menu-izquierda {
+    width: 0%;
+  }
+  ul.menu-opciones {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .menu-opciones {
+    height: 100vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 16px;
+  }
+  .acerca-info {
+    grid-template-areas:
+      'acercaimagen'
+      'bio'
+      'trabajo1'
+      'trabajo2';
+    grid-template-columns: 1fr;
+  }
+  .proyectos {
+    grid-template-columns: 1fr;
+  }
+  .experiencia-laboral {
+    grid-template-columns: 1fr;
   }
 }

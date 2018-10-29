@@ -28,7 +28,7 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: rgba(lighten($primary-color, 2), 0.1);
   }
 }
 
@@ -81,8 +81,12 @@ main {
   .acerca-imagen {
     grid-area: acercaimagen;
     margin: auto;
+    width: 250px;
+    height: 250px;
+    background: url(../img/foto.jpg);
+    background-size: 250px 250px;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
+    border: solid 3px $secondary-color;
   }
 
   .bio {
@@ -91,16 +95,128 @@ main {
   }
   .trabajo-1 {
     grid-area: trabajo1;
+    .iconos {
+      margin-top: 1rem;
+
+      a {
+        padding: 0.4rem;
+        &:hover {
+          color: $secondary-color;
+          @include easeOut();
+        }
+      }
+    }
   }
   .trabajo-2 {
     grid-area: trabajo2;
   }
-
   .trabajo {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
+}
+
+//Seccion de Proyectos
+
+.proyectos {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+//Seccion de Experiencia
+.experiencia-laboral {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  .exp {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+
+    a {
+      padding: 0.4rem;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: 100%;
+      border: 3px #fff solid;
+    }
+    &:hover {
+      opacity: 0.9;
+      a {
+        color: $secondary-color;
+      }
+      img {
+        border-color: $secondary-color;
+      }
+      @include easeOut;
+    }
+  }
+}
+
+//Contacto
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
 }
 
 #main-footer {
