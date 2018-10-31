@@ -70,12 +70,15 @@ main {
     }
   }
 }
+
+// Seccion Acerca de mi
 .acerca-info {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
     'acercaimagen bio'
-    'trabajo1 trabajo2';
+    'trabajo1 trabajo2'
+    'linea-tiempo linea-tiempo';
   grid-template-columns: repeat(2, 1fr);
 
   .acerca-imagen {
@@ -110,10 +113,61 @@ main {
   .trabajo-2 {
     grid-area: trabajo2;
   }
-  .trabajo {
+  .recuadro-negro {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
+  }
+
+  .timeline {
+    grid-area: linea-tiempo;
+    max-width: 1024px;
+    width: 90%;
+    margin: 0 auto;
+
+    .timeline-item {
+      padding: 3em 2em 2em;
+      position: relative;
+      color: set-text-color($primary-color);
+      border-left: 2px solid $secondary-color;
+
+      p {
+        font-size: 1rem;
+      }
+
+      &::before {
+        content: attr(date-is);
+        position: absolute;
+        left: 2em;
+        font-weight: bold;
+        top: 1em;
+        display: block;
+        font-weight: 700;
+        font-size: 0.785rem;
+      }
+
+      &::after {
+        width: 10px;
+        height: 10px;
+        display: block;
+        top: 1em;
+        position: absolute;
+        left: -7px;
+        border-radius: 10px;
+        content: '';
+        border: 2px solid $secondary-color;
+        background: set-text-color($primary-color);
+      }
+
+      &:last-child {
+        border-image: linear-gradient(
+            to bottom,
+            $secondary-color 60%,
+            rgba($secondary-color, 0)
+          )
+          1 100%;
+      }
+    }
   }
 }
 
@@ -169,8 +223,7 @@ main {
   }
 }
 
-//Contacto
-
+//Seccion de Contacto
 .boxes {
   display: flex;
   flex-wrap: wrap;
