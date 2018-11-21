@@ -161,6 +161,45 @@ main {
         color: #4f9524;
         transition: all 0.5s ease-out; }
 
+.recuadro-negro {
+  background: #515151;
+  padding: 0.5rem;
+  border-bottom: #4f9524 5px solid; }
+
+.timeline {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto; }
+  .timeline .timeline-item {
+    padding: 3em 2em 2em;
+    position: relative;
+    color: #fff;
+    border-left: 2px solid #4f9524; }
+    .timeline .timeline-item p {
+      font-size: 1rem; }
+    .timeline .timeline-item::before {
+      content: attr(date-is);
+      position: absolute;
+      left: 2em;
+      font-weight: bold;
+      top: 1em;
+      display: block;
+      font-weight: 700;
+      font-size: 0.785rem; }
+    .timeline .timeline-item::after {
+      width: 10px;
+      height: 10px;
+      display: block;
+      top: 1em;
+      position: absolute;
+      left: -7px;
+      border-radius: 10px;
+      content: '';
+      border: 2px solid #4f9524;
+      background: #fff; }
+    .timeline .timeline-item:last-child {
+      border-image: linear-gradient(to bottom, #4f9524 60%, rgba(79, 149, 36, 0)) 1 100%; }
+
 .acerca-info {
   display: grid;
   grid-gap: 30px;
@@ -189,44 +228,8 @@ main {
           transition: all 0.5s ease-out; }
   .acerca-info .trabajo-2 {
     grid-area: trabajo2; }
-  .acerca-info .recuadro-negro {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: #4f9524 5px solid; }
   .acerca-info .timeline {
-    grid-area: linea-tiempo;
-    max-width: 1024px;
-    width: 90%;
-    margin: 0 auto; }
-    .acerca-info .timeline .timeline-item {
-      padding: 3em 2em 2em;
-      position: relative;
-      color: #fff;
-      border-left: 2px solid #4f9524; }
-      .acerca-info .timeline .timeline-item p {
-        font-size: 1rem; }
-      .acerca-info .timeline .timeline-item::before {
-        content: attr(date-is);
-        position: absolute;
-        left: 2em;
-        font-weight: bold;
-        top: 1em;
-        display: block;
-        font-weight: 700;
-        font-size: 0.785rem; }
-      .acerca-info .timeline .timeline-item::after {
-        width: 10px;
-        height: 10px;
-        display: block;
-        top: 1em;
-        position: absolute;
-        left: -7px;
-        border-radius: 10px;
-        content: '';
-        border: 2px solid #4f9524;
-        background: #fff; }
-      .acerca-info .timeline .timeline-item:last-child {
-        border-image: linear-gradient(to bottom, #4f9524 60%, rgba(79, 149, 36, 0)) 1 100%; }
+    grid-area: linea-tiempo; }
 
 .proyectos {
   display: grid;
@@ -242,7 +245,7 @@ main {
 
 .experiencia-laboral {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 0.9rem;
   grid-template-columns: repeat(2, 1fr); }
   .experiencia-laboral .exp {
     background: #515151;
@@ -263,6 +266,30 @@ main {
         color: #4f9524; }
       .experiencia-laboral .exp:hover img {
         border-color: #4f9524; }
+
+#experiencia-detalle .espacio-header {
+  height: 20rem; }
+
+.tacu {
+  background: url(../img/experiencia/tacubanner.jpg);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.lared {
+  background: url(../img/experiencia/LaRedBanner.jpg);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.acerca-experiencia {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'imagenexp' 'descr' 'linea-tiempo';
+  grid-template-columns: 1fr; }
+  .acerca-experiencia .descripcion {
+    grid-area: descr;
+    font-size: 1.5rem; }
+  .acerca-experiencia .timeline {
+    grid-area: linea-tiempo; }
 
 .boxes {
   display: flex;
@@ -311,13 +338,15 @@ main {
   .proyectos {
     grid-template-columns: repeat(4, 1fr); } }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
+@media screen and (min-width: 801px) and (max-width: 1170px) {
   .proyectos {
     grid-template-columns: repeat(3, 1fr); }
   .experiencia-laboral {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  #experiencia-detalle .espacio-header {
+    height: 12rem; } }
 
-@media screen and (min-width: 421px) and (max-width: 768px) {
+@media screen and (min-width: 551px) and (max-width: 800px) {
   main {
     align-items: center;
     text-align: center; }
@@ -333,11 +362,11 @@ main {
     div.menu-izquierda.show {
       transform: translate3d(0, 0, 0); }
   .menu-opciones {
-    height: 75vh;
+    height: 70vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px; }
   .menu-izquierda {
-    height: 25vh;
+    height: 30vh;
     transform: translate3d(100%, 0, 0); }
     .menu-izquierda .logo {
       background: url(../img/foto.jpg);
@@ -350,9 +379,15 @@ main {
   .proyectos {
     grid-template-columns: repeat(2, 1fr); }
   .experiencia-laboral {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  #experiencia-detalle .espacio-header {
+    height: 8rem; }
+  .menu .nav-link {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff; } }
 
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 340px) and (max-width: 550px) {
   main#inicio h1 {
     margin-top: 10vh; }
   h1,
@@ -388,4 +423,10 @@ main {
   .proyectos {
     grid-template-columns: 1fr; }
   .experiencia-laboral {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  #experiencia-detalle .espacio-header {
+    height: 3rem; }
+  .menu .nav-link {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff; } }

@@ -71,6 +71,63 @@ main {
   }
 }
 
+// Clases generales
+.recuadro-negro {
+  background: lighten($primary-color, 5);
+  padding: 0.5rem;
+  border-bottom: $secondary-color 5px solid;
+}
+
+.timeline {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+
+  .timeline-item {
+    padding: 3em 2em 2em;
+    position: relative;
+    color: set-text-color($primary-color);
+    border-left: 2px solid $secondary-color;
+
+    p {
+      font-size: 1rem;
+    }
+
+    &::before {
+      content: attr(date-is);
+      position: absolute;
+      left: 2em;
+      font-weight: bold;
+      top: 1em;
+      display: block;
+      font-weight: 700;
+      font-size: 0.785rem;
+    }
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      display: block;
+      top: 1em;
+      position: absolute;
+      left: -7px;
+      border-radius: 10px;
+      content: '';
+      border: 2px solid $secondary-color;
+      background: set-text-color($primary-color);
+    }
+
+    &:last-child {
+      border-image: linear-gradient(
+          to bottom,
+          $secondary-color 60%,
+          rgba($secondary-color, 0)
+        )
+        1 100%;
+    }
+  }
+}
+
 // Seccion Acerca de mi
 .acerca-info {
   display: grid;
@@ -113,61 +170,9 @@ main {
   .trabajo-2 {
     grid-area: trabajo2;
   }
-  .recuadro-negro {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-  }
 
   .timeline {
     grid-area: linea-tiempo;
-    max-width: 1024px;
-    width: 90%;
-    margin: 0 auto;
-
-    .timeline-item {
-      padding: 3em 2em 2em;
-      position: relative;
-      color: set-text-color($primary-color);
-      border-left: 2px solid $secondary-color;
-
-      p {
-        font-size: 1rem;
-      }
-
-      &::before {
-        content: attr(date-is);
-        position: absolute;
-        left: 2em;
-        font-weight: bold;
-        top: 1em;
-        display: block;
-        font-weight: 700;
-        font-size: 0.785rem;
-      }
-
-      &::after {
-        width: 10px;
-        height: 10px;
-        display: block;
-        top: 1em;
-        position: absolute;
-        left: -7px;
-        border-radius: 10px;
-        content: '';
-        border: 2px solid $secondary-color;
-        background: set-text-color($primary-color);
-      }
-
-      &:last-child {
-        border-image: linear-gradient(
-            to bottom,
-            $secondary-color 60%,
-            rgba($secondary-color, 0)
-          )
-          1 100%;
-      }
-    }
   }
 }
 
@@ -193,7 +198,7 @@ main {
 //Seccion de Experiencia
 .experiencia-laboral {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 0.9rem;
   grid-template-columns: repeat(2, 1fr);
   .exp {
     background: lighten($primary-color, 5);
@@ -220,6 +225,47 @@ main {
       }
       @include easeOut;
     }
+  }
+}
+//Detalle de experiencia laboral
+#experiencia-detalle {
+  .espacio-header {
+    height: 20rem;
+  }
+}
+.tacu {
+  background: url(../img/experiencia/tacubanner.jpg);
+  @include bgExpProp();
+}
+.lared {
+  background: url(../img/experiencia/LaRedBanner.jpg);
+  @include bgExpProp();
+}
+.acerca-experiencia {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    'imagenexp'
+    'descr'
+    'linea-tiempo';
+  grid-template-columns: 1fr;
+
+  // .acerca-imagen {
+  //   grid-area: imagenexp;
+  //   margin: auto;
+  //   width: 100%;
+  //   height: 391px;
+  //   background-size: 100% 100%;
+
+  //   //border: solid 3px $secondary-color;
+  // }
+
+  .descripcion {
+    grid-area: descr;
+    font-size: 1.5rem;
+  }
+  .timeline {
+    grid-area: linea-tiempo;
   }
 }
 

@@ -13,6 +13,11 @@
   .experiencia-laboral {
     grid-template-columns: repeat(2, 1fr);
   }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 12rem;
+    }
+  }
 }
 
 //Tablests y netbooks
@@ -37,12 +42,12 @@
     }
   }
   .menu-opciones {
-    height: 75vh;
+    height: 70vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
   .menu-izquierda {
-    height: 25vh;
+    height: 30vh;
     transform: translate3d(100%, 0, 0);
 
     .logo {
@@ -67,6 +72,18 @@
   }
   .experiencia-laboral {
     grid-template-columns: 1fr;
+  }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 8rem;
+    }
+  }
+  .menu {
+    .nav-link {
+      font-size: 20px;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+    }
   }
 }
 
@@ -121,5 +138,17 @@
   }
   .experiencia-laboral {
     grid-template-columns: 1fr;
+  }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 3rem;
+    }
+  }
+  .menu {
+    .nav-link {
+      font-size: 30px;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+    }
   }
 }
