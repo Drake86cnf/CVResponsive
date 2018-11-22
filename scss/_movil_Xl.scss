@@ -1,0 +1,6 @@
+//Widescreens
+@include mediaXl {
+  .proyectos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

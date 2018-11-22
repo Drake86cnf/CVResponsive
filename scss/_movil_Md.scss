@@ -1,0 +1,66 @@
+//Tablests y netbooks
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+  ul.menu-opciones,
+  div.menu-izquierda {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .menu-opciones {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu-izquierda {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0);
+
+    .logo {
+      background: url(../img/foto.jpg);
+      background-size: 150px 150px;
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .acerca-info {
+    grid-template-areas:
+      'acercaimagen'
+      'bio'
+      'trabajo1'
+      'trabajo2'
+      'linea-tiempo'
+      'linea-tiempo';
+    grid-template-columns: 1fr;
+  }
+  .proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .experiencia-laboral {
+    grid-template-columns: 1fr;
+  }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 8rem;
+    }
+  }
+  .menu {
+    .nav-link {
+      font-size: 20px;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+    }
+  }
+}

@@ -79,7 +79,7 @@ main {
 }
 
 .timeline {
-  max-width: 1024px;
+  max-width: 100%;
   width: 90%;
   margin: 0 auto;
 
@@ -234,10 +234,12 @@ main {
   }
 }
 .tacu {
+  grid-area: imagenexp;
   background: url(../img/experiencia/tacubanner.jpg);
   @include bgExpProp();
 }
 .lared {
+  grid-area: imagenexp;
   background: url(../img/experiencia/LaRedBanner.jpg);
   @include bgExpProp();
 }

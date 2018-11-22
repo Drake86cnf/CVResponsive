@@ -1,0 +1,135 @@
+// Celulares Chicos
+@include mediaXs {
+  //Menu
+  nav.menu {
+    div.menu-izquierda {
+      width: 0%;
+    }
+    ul.menu-opciones {
+      float: none;
+      width: 100%;
+      min-height: 0;
+      height: 100vh;
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+      .nav-link {
+        position: relative;
+        font-size: 25px;
+        font-weight: 250;
+      }
+    }
+  }
+  //Linea del tiempo
+  .timeline {
+    .timeline-item {
+      p {
+        font-size: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  main h1 {
+    margin-top: 5vh;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading {
+      font-size: 2.5rem;
+    }
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.5rem;
+      background: rgba(lighten($primary-color, 2), 0.1);
+    }
+  }
+  //Acerca de mi
+  main#acerca {
+    .acerca-info {
+      grid-template-areas:
+        'acercaimagen'
+        'bio'
+        'linea-tiempo';
+      grid-template-columns: 1fr;
+      .bio {
+        p {
+          font-size: 1rem;
+        }
+      }
+      .acerca-imagen {
+        width: 175px;
+        height: 175px;
+        background: url(../img/foto.jpg);
+        background-size: 175px 175px;
+        border-radius: 50%;
+        border: solid 1px $secondary-color;
+      }
+    }
+  }
+  //Experiencia Laboral
+  main#experiencia {
+    .experiencia-laboral {
+      grid-template-columns: 1fr;
+    }
+  }
+  //Detalle de experiencia laboral
+  main#experiencia-detalle {
+    .espacio-header {
+      height: 0.5rem;
+    }
+    .acerca-experiencia {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas:
+        'imagenexp'
+        'descr'
+        'linea-tiempo';
+      grid-template-columns: 1fr;
+
+      .descripcion {
+        grid-area: descr;
+        p {
+          font-size: 1rem;
+        }
+      }
+      .timeline {
+        grid-area: linea-tiempo;
+      }
+    }
+  }
+  main#contacto {
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 1rem;
+
+      div {
+        font-size: 1rem;
+        border: 2px #fff solid;
+        padding: 0.3rem 0.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+          padding: 0.1rem 0.2rem;
+          background: $secondary-color;
+          color: set-text-color($secondary-color);
+          span {
+            color: set-text-color($secondary-color);
+          }
+        }
+      }
+    }
+  }
+}

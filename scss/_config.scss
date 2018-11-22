@@ -42,9 +42,15 @@ $background-opacity: 0.9;
 }
 //Mixin para tamaños de pantallas
 
+//Smartphone Gama Baja
+@mixin mediaXs {
+  @media screen and (min-width: 320px) and (max-width: 331px) {
+    @content;
+  }
+}
 //Smartphone
 @mixin mediaSm {
-  @media screen and (min-width: 340px) and (max-width: 550px) {
+  @media screen and (min-width: 332px) and (max-width: 550px) {
     @content;
   }
 }

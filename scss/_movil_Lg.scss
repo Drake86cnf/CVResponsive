@@ -1,0 +1,14 @@
+//PC Escritorio y Notebooks
+@include mediaLg {
+  .proyectos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .experiencia-laboral {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 12rem;
+    }
+  }
+}
