@@ -134,7 +134,7 @@ main {
   grid-gap: 30px;
   grid-template-areas:
     'acercaimagen bio'
-    'trabajo1 trabajo2'
+    'lenguajesbox lenguajesbox'
     'linea-tiempo linea-tiempo';
   grid-template-columns: repeat(2, 1fr);
 
@@ -153,26 +153,23 @@ main {
     grid-area: bio;
     font-size: 1.5rem;
   }
-  .trabajo-1 {
-    grid-area: trabajo1;
-    .iconos {
-      margin-top: 1rem;
-
-      a {
-        padding: 0.4rem;
-        &:hover {
-          color: $secondary-color;
-          @include easeOut();
-        }
-      }
-    }
-  }
-  .trabajo-2 {
-    grid-area: trabajo2;
-  }
 
   .timeline {
     grid-area: linea-tiempo;
+    padding-top: 10vh;
+  }
+
+  .lenguajes {
+    grid-area: lenguajesbox;
+    text-align: center;
+    .recuadro-negro {
+      .iconos-dev {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(8, 0.2fr);
+        justify-content: center;
+      }
+    }
   }
 }
 

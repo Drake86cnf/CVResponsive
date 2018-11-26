@@ -44,7 +44,7 @@ $background-opacity: 0.9;
 
 //Smartphone Gama Baja
 @mixin mediaXs {
-  @media screen and (min-width: 320px) and (max-width: 331px) {
+  @media screen and (max-width: 331px) {
     @content;
   }
 }

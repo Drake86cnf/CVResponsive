@@ -3,4 +3,9 @@
   .proyectos {
     grid-template-columns: repeat(4, 1fr);
   }
+  #experiencia-detalle {
+    .espacio-header {
+      height: 50vh;
+    }
+  }
 }

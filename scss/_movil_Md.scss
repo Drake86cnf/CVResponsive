@@ -1,66 +1,167 @@
 //Tablests y netbooks
 @include mediaMd {
+  //Menu
+  nav.menu {
+    .menu-izquierda {
+      height: 40vh;
+      width: 100%;
+      transform: translate3d(-100%, 0, 0);
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .logo {
+        background: url(../img/foto.jpg);
+        background-size: 150px 150px;
+        width: 150px;
+        height: 150px;
+      }
+    }
+    ul.menu-opciones {
+      float: none;
+      width: 100%;
+      min-height: 0;
+      transform: translate3d(100%, 0, 0);
+      height: 60vh;
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+      .nav-link {
+        position: relative;
+        font-size: 30px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  //Linea del tiempo
+  .timeline {
+    .timeline-item {
+      p {
+        font-size: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
   main {
     align-items: center;
     text-align: center;
+    h1 {
+      margin-top: 5vh;
+    }
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400;
 
-    .lg-heading {
+    &.lg-heading {
+      font-size: 5rem;
       line-height: 1;
       margin-bottom: 1rem;
     }
-  }
-  ul.menu-opciones,
-  div.menu-izquierda {
-    float: none;
-    width: 100%;
-    min-height: 0;
-
-    &.show {
-      transform: translate3d(0, 0, 0);
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.5rem;
+      background: rgba(lighten($primary-color, 2), 0.1);
     }
   }
-  .menu-opciones {
-    height: 70vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
+  //Inicio
+  main#inicio h1 {
+    margin-top: 50px;
   }
-  .menu-izquierda {
-    height: 30vh;
-    transform: translate3d(100%, 0, 0);
-
-    .logo {
-      background: url(../img/foto.jpg);
-      background-size: 150px 150px;
-      width: 150px;
-      height: 150px;
+  //Acerca de mi
+  main#acerca {
+    .acerca-info {
+      grid-template-areas:
+        'acercaimagen'
+        'bio'
+        'lenguajesbox'
+        'linea-tiempo';
+      grid-template-columns: 1fr;
+      .bio {
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      .acerca-imagen {
+        width: 175px;
+        height: 175px;
+        background: url(../img/foto.jpg);
+        background-size: 175px 175px;
+        border-radius: 50%;
+        border: solid 1px $secondary-color;
+      }
+    }
+    .lenguajes {
+      .recuadro-negro {
+        .iconos-dev {
+          grid-template-columns: repeat(4, 15%);
+        }
+      }
     }
   }
-  .acerca-info {
-    grid-template-areas:
-      'acercaimagen'
-      'bio'
-      'trabajo1'
-      'trabajo2'
-      'linea-tiempo'
-      'linea-tiempo';
-    grid-template-columns: 1fr;
+  //Experiencia Laboral
+  main#experiencia {
+    .experiencia-laboral {
+      grid-template-columns: 2fr;
+    }
   }
-  .proyectos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .experiencia-laboral {
-    grid-template-columns: 1fr;
-  }
-  #experiencia-detalle {
+  //Detalle de experiencia laboral
+  main#experiencia-detalle {
     .espacio-header {
-      height: 8rem;
+      height: 100px;
+    }
+    .acerca-experiencia {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas:
+        'imagenexp'
+        'descr'
+        'linea-tiempo';
+      grid-template-columns: 1fr;
+
+      .descripcion {
+        grid-area: descr;
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      .timeline {
+        grid-area: linea-tiempo;
+      }
     }
   }
-  .menu {
-    .nav-link {
-      font-size: 20px;
-      font-weight: 300;
-      color: set-text-color($primary-color);
+  main#contacto {
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 1rem;
+
+      div {
+        font-size: 1.5rem;
+        border: 2px #fff solid;
+        padding: 0.8rem 1rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+          padding: 0.6rem 0.7rem;
+          background: $secondary-color;
+          color: set-text-color($secondary-color);
+          span {
+            color: set-text-color($secondary-color);
+          }
+        }
+      }
     }
   }
 }

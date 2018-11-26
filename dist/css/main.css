@@ -203,7 +203,7 @@ main {
 .acerca-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'acercaimagen bio' 'trabajo1 trabajo2' 'linea-tiempo linea-tiempo';
+  grid-template-areas: 'acercaimagen bio' 'lenguajesbox lenguajesbox' 'linea-tiempo linea-tiempo';
   grid-template-columns: repeat(2, 1fr); }
   .acerca-info .acerca-imagen {
     grid-area: acercaimagen;
@@ -217,19 +217,17 @@ main {
   .acerca-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
-  .acerca-info .trabajo-1 {
-    grid-area: trabajo1; }
-    .acerca-info .trabajo-1 .iconos {
-      margin-top: 1rem; }
-      .acerca-info .trabajo-1 .iconos a {
-        padding: 0.4rem; }
-        .acerca-info .trabajo-1 .iconos a:hover {
-          color: #4f9524;
-          transition: all 0.5s ease-out; }
-  .acerca-info .trabajo-2 {
-    grid-area: trabajo2; }
   .acerca-info .timeline {
-    grid-area: linea-tiempo; }
+    grid-area: linea-tiempo;
+    padding-top: 10vh; }
+  .acerca-info .lenguajes {
+    grid-area: lenguajesbox;
+    text-align: center; }
+    .acerca-info .lenguajes .recuadro-negro .iconos-dev {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: repeat(8, 0.2fr);
+      justify-content: center; }
 
 .proyectos {
   display: grid;
@@ -336,7 +334,7 @@ main {
   color: #fff;
   height: 60px; }
 
-@media screen and (min-width: 320px) and (max-width: 331px) {
+@media screen and (max-width: 331px) {
   nav.menu div.menu-izquierda {
     width: 0%; }
   nav.menu ul.menu-opciones {
@@ -348,15 +346,18 @@ main {
       transform: translate3d(0, 0, 0); }
     nav.menu ul.menu-opciones .nav-link {
       position: relative;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 250; }
   .timeline .timeline-item p {
     font-size: 1rem; }
   .timeline .timeline-item h1 {
     font-size: 1.5rem;
     font-weight: bold; }
-  main h1 {
-    margin-top: 5vh; }
+  main {
+    align-items: center;
+    text-align: center; }
+    main h1 {
+      margin-top: 5vh; }
   h1,
   h2,
   h3 {
@@ -373,8 +374,10 @@ main {
       padding: 0.2rem 1rem;
       font-size: 1.5rem;
       background: rgba(73, 73, 73, 0.1); }
+  main#inicio h1 {
+    margin-top: 1vh; }
   main#acerca .acerca-info {
-    grid-template-areas: 'acercaimagen' 'bio' 'linea-tiempo';
+    grid-template-areas: 'acercaimagen' 'bio' 'lenguajesbox' 'linea-tiempo';
     grid-template-columns: 1fr; }
     main#acerca .acerca-info .bio p {
       font-size: 1rem; }
@@ -385,10 +388,12 @@ main {
       background-size: 175px 175px;
       border-radius: 50%;
       border: solid 1px #4f9524; }
+  main#acerca .lenguajes .recuadro-negro .iconos-dev {
+    grid-template-columns: repeat(2, 40%); }
   main#experiencia .experiencia-laboral {
     grid-template-columns: 1fr; }
   main#experiencia-detalle .espacio-header {
-    height: 0.5rem; }
+    height: 20px; }
   main#experiencia-detalle .acerca-experiencia {
     display: grid;
     grid-gap: 30px;
@@ -420,111 +425,196 @@ main {
           color: #fff; } }
 
 @media screen and (min-width: 332px) and (max-width: 550px) {
-  main#inicio h1 {
-    margin-top: 10vh; }
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-    font-weight: 300; }
-    h1.lg-heading,
-    h2.lg-heading,
-    h3.lg-heading {
-      font-size: 3rem; }
-    h1.sm-heading,
-    h2.sm-heading,
-    h3.sm-heading {
-      margin-bottom: 2rem;
-      padding: 0.2rem 1rem;
-      background: rgba(73, 73, 73, 0.1); }
-    h1 .boxes,
-    h2 .boxes,
-    h3 .boxes {
-      font-size: 1rem;
-      font-weight: 300; }
-  main#contacto h1 {
-    margin-top: 10vh; }
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-    font-weight: 300; }
-    h1.lg-heading,
-    h2.lg-heading,
-    h3.lg-heading {
-      font-size: 3rem; }
-    h1.sm-heading,
-    h2.sm-heading,
-    h3.sm-heading {
-      margin-bottom: 2rem;
-      padding: 0.2rem 1rem;
-      background: rgba(73, 73, 73, 0.1); }
-  div.menu-izquierda {
+  nav.menu div.menu-izquierda {
     width: 0%; }
-  ul.menu-opciones {
+  nav.menu ul.menu-opciones {
     float: none;
     width: 100%;
-    min-height: 0; }
-    ul.menu-opciones.show {
+    min-height: 0;
+    height: 100vh; }
+    nav.menu ul.menu-opciones.show {
       transform: translate3d(0, 0, 0); }
-  .menu-opciones {
-    height: 100vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 16px; }
-  .acerca-info {
-    grid-template-areas: 'acercaimagen' 'bio' 'linea-tiempo';
-    grid-template-columns: 1fr; }
-  .proyectos {
-    grid-template-columns: 1fr; }
-  .experiencia-laboral {
-    grid-template-columns: 1fr; }
-  #experiencia-detalle .espacio-header {
-    height: 3rem; }
-  .menu .nav-link {
-    font-size: 30px;
-    font-weight: 300;
-    color: #fff; } }
-
-@media screen and (min-width: 551px) and (max-width: 800px) {
+    nav.menu ul.menu-opciones .nav-link {
+      position: relative;
+      font-size: 30px;
+      font-weight: 300; }
+  .timeline .timeline-item p {
+    font-size: 1rem; }
+  .timeline .timeline-item h1 {
+    font-size: 1.5rem;
+    font-weight: bold; }
   main {
     align-items: center;
     text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-opciones,
-  div.menu-izquierda {
-    float: none;
+    main h1 {
+      margin-top: 5vh; }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400; }
+    h1.lg-heading,
+    h2.lg-heading,
+    h3.lg-heading {
+      font-size: 2.5rem; }
+    h1.sm-heading,
+    h2.sm-heading,
+    h3.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.5rem;
+      background: rgba(73, 73, 73, 0.1); }
+  main#inicio h1 {
+    margin-top: 10vh; }
+  main#acerca .acerca-info {
+    grid-template-areas: 'acercaimagen' 'bio' 'lenguajesbox' 'linea-tiempo';
+    grid-template-columns: 1fr; }
+    main#acerca .acerca-info .bio p {
+      font-size: 1rem; }
+    main#acerca .acerca-info .acerca-imagen {
+      width: 175px;
+      height: 175px;
+      background: url(../img/foto.jpg);
+      background-size: 175px 175px;
+      border-radius: 50%;
+      border: solid 1px #4f9524; }
+  main#acerca .lenguajes .recuadro-negro .iconos-dev {
+    grid-template-columns: repeat(2, 30%); }
+  main#experiencia .experiencia-laboral {
+    grid-template-columns: 1fr; }
+  main#experiencia-detalle .espacio-header {
+    height: 80px; }
+  main#experiencia-detalle .acerca-experiencia {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'imagenexp' 'descr' 'linea-tiempo';
+    grid-template-columns: 1fr; }
+    main#experiencia-detalle .acerca-experiencia .descripcion {
+      grid-area: descr; }
+      main#experiencia-detalle .acerca-experiencia .descripcion p {
+        font-size: 1rem; }
+    main#experiencia-detalle .acerca-experiencia .timeline {
+      grid-area: linea-tiempo; }
+  main#contacto .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem; }
+    main#contacto .boxes div {
+      font-size: 1rem;
+      border: 2px #fff solid;
+      padding: 0.3rem 0.5rem;
+      margin-bottom: 3rem;
+      transition: all 0.5s ease-out; }
+      main#contacto .boxes div:hover {
+        padding: 0.1rem 0.2rem;
+        background: #4f9524;
+        color: #fff; }
+        main#contacto .boxes div:hover span {
+          color: #fff; } }
+
+@media screen and (min-width: 551px) and (max-width: 800px) {
+  nav.menu .menu-izquierda {
+    height: 40vh;
     width: 100%;
-    min-height: 0; }
-    ul.menu-opciones.show,
-    div.menu-izquierda.show {
+    transform: translate3d(-100%, 0, 0); }
+    nav.menu .menu-izquierda.show {
       transform: translate3d(0, 0, 0); }
-  .menu-opciones {
-    height: 70vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-izquierda {
-    height: 30vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-izquierda .logo {
+    nav.menu .menu-izquierda .logo {
       background: url(../img/foto.jpg);
       background-size: 150px 150px;
       width: 150px;
       height: 150px; }
-  .acerca-info {
-    grid-template-areas: 'acercaimagen' 'bio' 'trabajo1' 'trabajo2' 'linea-tiempo' 'linea-tiempo';
+  nav.menu ul.menu-opciones {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    transform: translate3d(100%, 0, 0);
+    height: 60vh; }
+    nav.menu ul.menu-opciones.show {
+      transform: translate3d(0, 0, 0); }
+    nav.menu ul.menu-opciones .nav-link {
+      position: relative;
+      font-size: 30px;
+      font-weight: 300; }
+  .timeline .timeline-item p {
+    font-size: 1rem; }
+  .timeline .timeline-item h1 {
+    font-size: 1.5rem;
+    font-weight: bold; }
+  main {
+    align-items: center;
+    text-align: center; }
+    main h1 {
+      margin-top: 5vh; }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400; }
+    h1.lg-heading,
+    h2.lg-heading,
+    h3.lg-heading {
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 1rem; }
+    h1.sm-heading,
+    h2.sm-heading,
+    h3.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.5rem;
+      background: rgba(73, 73, 73, 0.1); }
+  main#inicio h1 {
+    margin-top: 50px; }
+  main#acerca .acerca-info {
+    grid-template-areas: 'acercaimagen' 'bio' 'lenguajesbox' 'linea-tiempo';
     grid-template-columns: 1fr; }
-  .proyectos {
-    grid-template-columns: repeat(2, 1fr); }
-  .experiencia-laboral {
+    main#acerca .acerca-info .bio p {
+      font-size: 1.5rem; }
+    main#acerca .acerca-info .acerca-imagen {
+      width: 175px;
+      height: 175px;
+      background: url(../img/foto.jpg);
+      background-size: 175px 175px;
+      border-radius: 50%;
+      border: solid 1px #4f9524; }
+  main#acerca .lenguajes .recuadro-negro .iconos-dev {
+    grid-template-columns: repeat(4, 15%); }
+  main#experiencia .experiencia-laboral {
+    grid-template-columns: 2fr; }
+  main#experiencia-detalle .espacio-header {
+    height: 100px; }
+  main#experiencia-detalle .acerca-experiencia {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'imagenexp' 'descr' 'linea-tiempo';
     grid-template-columns: 1fr; }
-  #experiencia-detalle .espacio-header {
-    height: 8rem; }
-  .menu .nav-link {
-    font-size: 20px;
-    font-weight: 300;
-    color: #fff; } }
+    main#experiencia-detalle .acerca-experiencia .descripcion {
+      grid-area: descr; }
+      main#experiencia-detalle .acerca-experiencia .descripcion p {
+        font-size: 1.5rem; }
+    main#experiencia-detalle .acerca-experiencia .timeline {
+      grid-area: linea-tiempo; }
+  main#contacto .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem; }
+    main#contacto .boxes div {
+      font-size: 1.5rem;
+      border: 2px #fff solid;
+      padding: 0.8rem 1rem;
+      margin-bottom: 3rem;
+      transition: all 0.5s ease-out; }
+      main#contacto .boxes div:hover {
+        padding: 0.6rem 0.7rem;
+        background: #4f9524;
+        color: #fff; }
+        main#contacto .boxes div:hover span {
+          color: #fff; } }
 
 @media screen and (min-width: 801px) and (max-width: 1170px) {
   .proyectos {
@@ -536,4 +626,6 @@ main {
 
 @media screen and (min-width: 1171px) {
   .proyectos {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  #experiencia-detalle .espacio-header {
+    height: 50vh; } }
