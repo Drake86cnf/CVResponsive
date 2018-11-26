@@ -11,4 +11,16 @@
       height: 12rem;
     }
   }
+  .lenguajes {
+    grid-area: lenguajesbox;
+    text-align: center;
+    .recuadro-negro {
+      .iconos-dev {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(8, 0.2fr);
+        justify-content: center;
+      }
+    }
+  }
 }

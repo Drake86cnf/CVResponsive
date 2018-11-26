@@ -622,10 +622,26 @@ main {
   .experiencia-laboral {
     grid-template-columns: repeat(2, 1fr); }
   #experiencia-detalle .espacio-header {
-    height: 12rem; } }
+    height: 12rem; }
+  .lenguajes {
+    grid-area: lenguajesbox;
+    text-align: center; }
+    .lenguajes .recuadro-negro .iconos-dev {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: repeat(8, 0.2fr);
+      justify-content: center; } }
 
 @media screen and (min-width: 1171px) {
   .proyectos {
     grid-template-columns: repeat(4, 1fr); }
   #experiencia-detalle .espacio-header {
-    height: 50vh; } }
+    height: 50vh; }
+  .lenguajes {
+    grid-area: lenguajesbox;
+    text-align: center; }
+    .lenguajes .recuadro-negro .iconos-dev {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: repeat(8, 0.2fr);
+      justify-content: center; } }
