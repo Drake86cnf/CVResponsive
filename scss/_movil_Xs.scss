@@ -86,7 +86,10 @@
     .lenguajes {
       .recuadro-negro {
         .iconos-dev {
-          grid-template-columns: repeat(2, 40%);
+          i {
+            font-size: 2rem;
+          }
+          grid-template-columns: repeat(2, 0.2fr);
         }
       }
     }

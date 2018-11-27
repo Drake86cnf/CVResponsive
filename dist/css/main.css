@@ -226,8 +226,10 @@ main {
     .acerca-info .lenguajes .recuadro-negro .iconos-dev {
       display: grid;
       grid-gap: 2rem;
-      grid-template-columns: repeat(8, 0.2fr);
+      grid-template-columns: repeat(6, 0.2fr);
       justify-content: center; }
+      .acerca-info .lenguajes .recuadro-negro .iconos-dev i {
+        font-size: 7rem; }
 
 .proyectos {
   display: grid;
@@ -389,7 +391,9 @@ main {
       border-radius: 50%;
       border: solid 1px #4f9524; }
   main#acerca .lenguajes .recuadro-negro .iconos-dev {
-    grid-template-columns: repeat(2, 40%); }
+    grid-template-columns: repeat(2, 0.2fr); }
+    main#acerca .lenguajes .recuadro-negro .iconos-dev i {
+      font-size: 2rem; }
   main#experiencia .experiencia-laboral {
     grid-template-columns: 1fr; }
   main#experiencia-detalle .espacio-header {
@@ -479,7 +483,9 @@ main {
       border-radius: 50%;
       border: solid 1px #4f9524; }
   main#acerca .lenguajes .recuadro-negro .iconos-dev {
-    grid-template-columns: repeat(2, 30%); }
+    grid-template-columns: repeat(3, 0.2fr); }
+    main#acerca .lenguajes .recuadro-negro .iconos-dev i {
+      font-size: 3rem; }
   main#experiencia .experiencia-laboral {
     grid-template-columns: 1fr; }
   main#experiencia-detalle .espacio-header {
@@ -581,7 +587,9 @@ main {
       border-radius: 50%;
       border: solid 1px #4f9524; }
   main#acerca .lenguajes .recuadro-negro .iconos-dev {
-    grid-template-columns: repeat(4, 15%); }
+    grid-template-columns: repeat(4, 0.2fr); }
+    main#acerca .lenguajes .recuadro-negro .iconos-dev i {
+      font-size: 4rem; }
   main#experiencia .experiencia-laboral {
     grid-template-columns: 2fr; }
   main#experiencia-detalle .espacio-header {
@@ -623,14 +631,8 @@ main {
     grid-template-columns: repeat(2, 1fr); }
   #experiencia-detalle .espacio-header {
     height: 12rem; }
-  .lenguajes {
-    grid-area: lenguajesbox;
-    text-align: center; }
-    .lenguajes .recuadro-negro .iconos-dev {
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: repeat(8, 0.2fr);
-      justify-content: center; } }
+  main#acerca .lenguajes .recuadro-negro .iconos-dev {
+    grid-template-columns: repeat(4, 0.2fr); } }
 
 @media screen and (min-width: 1171px) {
   .proyectos {
@@ -638,10 +640,6 @@ main {
   #experiencia-detalle .espacio-header {
     height: 50vh; }
   .lenguajes {
-    grid-area: lenguajesbox;
-    text-align: center; }
+    grid-area: lenguajesbox; }
     .lenguajes .recuadro-negro .iconos-dev {
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: repeat(8, 0.2fr);
-      justify-content: center; } }
+      grid-template-columns: repeat(6, 0.2fr); } }

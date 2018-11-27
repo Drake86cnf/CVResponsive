@@ -164,9 +164,12 @@ main {
     text-align: center;
     .recuadro-negro {
       .iconos-dev {
+        i {
+          font-size: 7rem;
+        }
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: repeat(8, 0.2fr);
+        grid-template-columns: repeat(6, 0.2fr);
         justify-content: center;
       }
     }
