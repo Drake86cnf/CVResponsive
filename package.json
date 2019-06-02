@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "Curriculum Vitae Responsivo",
   "main": "index.js",
+  "homepage": "https://cv.antarticsoft.com",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Fernandez Nahuel",
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.9.4"
+    "devicon": "^2.2.0",
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.12.0"
   }
 }
