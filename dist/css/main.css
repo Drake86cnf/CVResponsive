@@ -246,7 +246,7 @@ main {
 .experiencia-laboral {
   display: grid;
   grid-gap: 0.9rem;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(3, 1fr); }
   .experiencia-laboral .exp {
     background: #515151;
     padding: 0.5rem;
@@ -279,6 +279,12 @@ main {
 .lared {
   grid-area: imagenexp;
   background: url(../img/experiencia/LaRedBanner.jpg);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.inenco {
+  grid-area: imagenexp;
+  background: url(../img/experiencia/InencoBanner.jpg);
   background-repeat: no-repeat;
   background-size: contain; }
 
@@ -591,7 +597,7 @@ main {
     main#acerca .lenguajes .recuadro-negro .iconos-dev i {
       font-size: 4rem; }
   main#experiencia .experiencia-laboral {
-    grid-template-columns: 2fr; }
+    grid-template-columns: 3fr; }
   main#experiencia-detalle .espacio-header {
     height: 100px; }
   main#experiencia-detalle .acerca-experiencia {
@@ -628,7 +634,7 @@ main {
   .proyectos {
     grid-template-columns: repeat(3, 1fr); }
   .experiencia-laboral {
-    grid-template-columns: repeat(2, 1fr); }
+    grid-template-columns: repeat(3, 2fr); }
   #experiencia-detalle .espacio-header {
     height: 12rem; }
   main#acerca .lenguajes .recuadro-negro .iconos-dev {

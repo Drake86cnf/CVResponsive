@@ -199,7 +199,7 @@ main {
 .experiencia-laboral {
   display: grid;
   grid-gap: 0.9rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   .exp {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
@@ -241,6 +241,11 @@ main {
 .lared {
   grid-area: imagenexp;
   background: url(../img/experiencia/LaRedBanner.jpg);
+  @include bgExpProp();
+}
+.inenco {
+  grid-area: imagenexp;
+  background: url(../img/experiencia/InencoBanner.jpg);
   @include bgExpProp();
 }
 .acerca-experiencia {
